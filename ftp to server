@@ -1,0 +1,15 @@
+.bat
+
+@Echo Off
+set localPath=Filepath\Filename      rem O:\Script\ADS3_Prj\MCS3_ADS3\test_project_ceva_nr.a
+set ftpip=xxx                        rem 192.254.1.16
+set username=xxx                     rem itran
+set password=xxx                     rem Itran_2430!@#
+Echo open %ftpip% >ftp.up
+Echo %username%>>ftp.up
+Echo %password%>>ftp.up
+Echo put %localPath%>>ftp.up
+Echo bye>>ftp.up
+FTP -s:ftp.up
+del ftp.up /q
+：Pause
